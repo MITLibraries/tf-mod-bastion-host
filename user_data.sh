@@ -6,7 +6,7 @@
 
 # Amazon Linux (RHEL) - NAT instances
 yum install jq nc mysql -y
-amazon-linux-extras install epel -y
+amazon-linux-extras install epel postgresql10 -y
 yum update -y
 #####################
 
