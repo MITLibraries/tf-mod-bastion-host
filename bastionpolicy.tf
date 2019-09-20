@@ -1,7 +1,7 @@
 # This is just a sample definition of IAM instance profile which is allowed to read-only from S3, and associate ElasticIP addresses.
 resource "aws_iam_instance_profile" "s3_readonly-allow_associateaddress" {
   name = "s3_readonly-allow_associateaddress-${terraform.workspace}"
-  role = "${aws_iam_role.s3_readonly-allow_associateaddress.name}"
+  role = aws_iam_role.s3_readonly-allow_associateaddress.name
 }
 
 resource "aws_iam_role" "s3_readonly-allow_associateaddress" {
@@ -23,11 +23,12 @@ resource "aws_iam_role" "s3_readonly-allow_associateaddress" {
   ]
 }
 EOF
+
 }
 
 resource "aws_iam_role_policy" "s3_readonly-allow_associateaddress_policy" {
   name = "s3_readonly-allow_associateaddress-policy-${terraform.workspace}"
-  role = "${aws_iam_role.s3_readonly-allow_associateaddress.id}"
+  role = aws_iam_role.s3_readonly-allow_associateaddress.id
 
   policy = <<EOF
 {
@@ -46,4 +47,6 @@ resource "aws_iam_role_policy" "s3_readonly-allow_associateaddress_policy" {
     ]
 }
 EOF
+
 }
+
