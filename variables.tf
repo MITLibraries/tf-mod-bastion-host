@@ -1,6 +1,6 @@
 variable "allowed_cidr" {
   description = "A list of CIDR Networks to allow ssh access to."
-  type        = "list"
+  type        = list(string)
 
   default = [
     "0.0.0.0/0",
@@ -9,12 +9,12 @@ variable "allowed_cidr" {
 
 variable "logzio_token" {
   description = "Logz.io token secret"
-  type        = "string"
+  type        = string
 }
 
 variable "allowed_ipv6_cidr" {
   description = "A list of IPv6 CIDR Networks to allow ssh access to."
-  type        = "list"
+  type        = list(string)
 
   default = [
     "::/0",
@@ -23,7 +23,7 @@ variable "allowed_ipv6_cidr" {
 
 variable "allowed_security_groups" {
   description = "A list of Security Group ID's to allow access to."
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -34,7 +34,7 @@ variable "name" {
 
 variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`)"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -133,3 +133,4 @@ variable "apply_changes_immediately" {
   description = "Whether to apply the changes at once and recreate auto-scaling group"
   default     = false
 }
+
