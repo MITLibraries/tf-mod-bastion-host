@@ -127,7 +127,7 @@ variable "security_group_ids" {
 variable "subnet_ids" {
   default     = []
   description = "A list of subnet ids"
-  type        = string
+  type        = list(string)
 }
 
 variable "eip" {
