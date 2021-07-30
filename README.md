@@ -8,6 +8,26 @@ _Only SSH access is allowed to the bastion host._
 
 This module is originally from [here](https://github.com/terraform-community-modules/tf_aws_bastion_s3_keys) and has been modified to fit our needs.
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 2.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 2.0 |
+| <a name="provider_template"></a> [template](#provider\_template) | n/a |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_label"></a> [label](#module\_label) | github.com/mitlibraries/tf-mod-name | 0.13 |
+
 ## Inputs
 
 | Name                        | Description                                                              |  Type  |     Default    | Required |
